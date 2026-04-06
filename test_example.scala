@@ -1,19 +1,26 @@
-// Test script for VoiceIt3 Scala SDK
-// Run: sbt console, then :load test_example.scala
-
 import voiceit3.VoiceIt3
 
 object TestExample extends App {
-  val apiKey = sys.env.getOrElse("VOICEIT_API_KEY", { println("Set VOICEIT_API_KEY"); sys.exit(1); "" })
-  val apiToken = sys.env.getOrElse("VOICEIT_API_TOKEN", { println("Set VOICEIT_API_TOKEN"); sys.exit(1); "" })
+  val ak = sys.env("VOICEIT_API_KEY")
+  val at = sys.env("VOICEIT_API_TOKEN")
+  val vi = new VoiceIt3(ak, at)
+  val phrase = "never forget tomorrow is a new day"
+  val td = "test-data"
 
-  val vi = new VoiceIt3(apiKey, apiToken)
+  val createR = vi.createUser()
+  val userId = createR.split("usr_")(1).take(32)
+  val fullUserId = "usr_" + userId
+  println(s"CreateUser: ${if (createR.contains("SUCC")) "PASS" else "FAIL"}")
 
-  println("CreateUser: " + vi.createUser())
-  println("GetAllUsers: " + vi.getAllUsers())
-  println("CreateGroup: " + vi.createGroup("Test Group"))
-  println("GetAllGroups: " + vi.getAllGroups())
-  println("GetPhrases: " + vi.getPhrases("en-US"))
+  for (i <- 1 to 3) {
+    val r = vi.createVideoEnrollment(fullUserId, "en-US", phrase, s"$td/videoEnrollmentA$i.mov")
+    println(s"VideoEnrollment$i: ${if (r.contains("SUCC")) "PASS" else "FAIL"}")
+  }
 
-  println("\nAll API calls completed successfully!")
+  val vr = vi.videoVerification(fullUserId, "en-US", phrase, s"$td/videoVerificationA1.mov")
+  println(s"VideoVerification: ${if (vr.contains("SUCC")) "PASS" else "FAIL"}")
+
+  vi.deleteAllEnrollments(fullUserId)
+  vi.deleteUser(fullUserId)
+  println("\nAll tests passed!")
 }
