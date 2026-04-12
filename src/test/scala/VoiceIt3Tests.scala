@@ -299,7 +299,7 @@ class TestGetVideoEnrollments extends AnyFunSuite with BeforeAndAfter {
       var ret = Json.parse(vi.createUser)
       userId = (ret \ "userId").get.as[String]
       downloadFile("https://drive.voiceit.io/files/videoEnrollmentB1.mov", "./testgetenrollmentvideoEnrollmentB1.mov")
-      vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testgetenrollmentvideoEnrollmentB1.mov")
+      vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testgetenrollmentvideoEnrollmentB1.mov")
     }
 
     after {
@@ -369,7 +369,7 @@ class TestGetVoiceEnrollments extends AnyFunSuite with BeforeAndAfter {
       var ret = Json.parse(vi.createUser)
       userId = (ret \ "userId").get.as[String]
       downloadFile("https://drive.voiceit.io/files/enrollmentA1.wav", "./testgetenrollmentenrollmentA1.wav")
-      vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testgetenrollmentenrollmentA1.wav")
+      vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testgetenrollmentenrollmentA1.wav")
     }
 
     after {
@@ -413,12 +413,12 @@ class TestDeleteEnrollment extends AnyFunSuite with BeforeAndAfter {
       downloadFile("https://drive.voiceit.io/files/enrollmentA2.wav", "./testdeleteenrollmentenrollmentA2.wav")
       downloadFile("https://drive.voiceit.io/files/faceEnrollmentB1.mp4", "./testdeleteenrollmentfaceEnrollmentB1.mp4")
       downloadFile("https://drive.voiceit.io/files/faceEnrollmentB2.mp4", "./testdeleteenrollmentfaceEnrollmentB2.mp4")
-      ret = Json.parse(vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentvideoEnrollmentB1.mov"))
+      ret = Json.parse(vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentvideoEnrollmentB1.mov"))
       videoEnrollmentId = (ret \ "id").get.as[Int]
-      vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentvideoEnrollmentB2.mov")
-      ret = Json.parse(vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentenrollmentA1.wav"))
+      vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentvideoEnrollmentB2.mov")
+      ret = Json.parse(vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentenrollmentA1.wav"))
       voiceEnrollmentId = (ret \ "id").get.as[Int]
-      vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentenrollmentA2.wav")
+      vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentenrollmentA2.wav")
       ret = Json.parse(vi.createFaceEnrollment(userId, "./testdeleteenrollmentfaceEnrollmentB1.mp4"))
       faceEnrollmentId = (ret \ "faceEnrollmentId").get.as[Int]
       vi.createFaceEnrollment(userId, "./testdeleteenrollmentfaceEnrollmentB2.mp4")
@@ -457,11 +457,11 @@ class TestDeleteEnrollments extends AnyFunSuite with BeforeAndAfter {
       downloadFile("https://drive.voiceit.io/files/faceEnrollmentB1.mp4", "./testdeleteenrollmentsfaceEnrollmentB1.mp4")
       downloadFile("https://drive.voiceit.io/files/faceEnrollmentB2.mp4", "./testdeleteenrollmentsfaceEnrollmentB2.mp4")
 
-      vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentsvideoEnrollmentB1.mov")
-      vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentsvideoEnrollmentB2.mov")
+      vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentsvideoEnrollmentB1.mov")
+      vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentsvideoEnrollmentB2.mov")
 
-      vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentsenrollmentA1.wav")
-      vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteenrollmentsenrollmentA2.wav")
+      vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentsenrollmentA1.wav")
+      vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteenrollmentsenrollmentA2.wav")
 
       vi.createFaceEnrollment(userId, "./testdeleteenrollmentsfaceEnrollmentB1.mp4")
       vi.createFaceEnrollment(userId, "./testdeleteenrollmentsfaceEnrollmentB2.mp4")
@@ -500,11 +500,11 @@ class TestDeleteAllEnrollments extends AnyFunSuite with BeforeAndAfter {
       downloadFile("https://drive.voiceit.io/files/faceEnrollmentB1.mp4", "./testdeleteallenrollmentsfaceEnrollmentB1.mp4")
       downloadFile("https://drive.voiceit.io/files/faceEnrollmentB2.mp4", "./testdeleteallenrollmentsfaceEnrollmentB2.mp4")
 
-      vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteallenrollmentsvideoEnrollmentB1.mov")
-      vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteallenrollmentsvideoEnrollmentB2.mov")
+      vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteallenrollmentsvideoEnrollmentB1.mov")
+      vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteallenrollmentsvideoEnrollmentB2.mov")
 
-      vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteallenrollmentsenrollmentA1.wav")
-      vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testdeleteallenrollmentsenrollmentA2.wav")
+      vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteallenrollmentsenrollmentA1.wav")
+      vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testdeleteallenrollmentsenrollmentA2.wav")
 
       vi.createFaceEnrollment(userId, "./testdeleteallenrollmentsfaceEnrollmentB1.mp4")
       vi.createFaceEnrollment(userId, "./testdeleteallenrollmentsfaceEnrollmentB2.mp4")
@@ -563,7 +563,7 @@ class TestVideoEnrollments extends AnyFunSuite with BeforeAndAfter {
 
     // Create Video Enrollment
     test("createVideoEnrollment()") {
-      val ret = Json.parse(vi.createVideoEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testenrollmentvideoEnrollmentB1.mov"))
+      val ret = Json.parse(vi.createVideoEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testenrollmentvideoEnrollmentB1.mov"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 201, "message: " + message)
@@ -594,12 +594,12 @@ class TestVideoVerificationIdentification extends AnyFunSuite with BeforeAndAfte
       groupId = (ret \ "groupId").get.as[String]
       vi.addUserToGroup(groupId, userId1)
       vi.addUserToGroup(groupId, userId2)
-      vi.createVideoEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB1.mov")
-      vi.createVideoEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB2.mov")
-      vi.createVideoEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB3.mov")
-      vi.createVideoEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC1.mov")
-      vi.createVideoEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC2.mov")
-      vi.createVideoEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC3.mov")
+      vi.createVideoEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB1.mov")
+      vi.createVideoEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB2.mov")
+      vi.createVideoEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB3.mov")
+      vi.createVideoEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC1.mov")
+      vi.createVideoEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC2.mov")
+      vi.createVideoEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC3.mov")
     }
 
     after {
@@ -613,7 +613,7 @@ class TestVideoVerificationIdentification extends AnyFunSuite with BeforeAndAfte
 
     // Video Verification
     test("videoVerification()") {
-      val ret = Json.parse(vi.videoVerification(userId1, "en-US", "never forget tomorrow is a new day", "./videoVerificationB1.mov"))
+      val ret = Json.parse(vi.videoVerification(userId1, "en-US", "Never forget tomorrow is a new day", "./videoVerificationB1.mov"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -623,7 +623,7 @@ class TestVideoVerificationIdentification extends AnyFunSuite with BeforeAndAfte
 
     // Video Identification
     test("videoIdentification()") {
-      val ret = Json.parse(vi.videoIdentification(groupId, "en-US", "never forget tomorrow is a new day", "./videoVerificationB1.mov"))
+      val ret = Json.parse(vi.videoIdentification(groupId, "en-US", "Never forget tomorrow is a new day", "./videoVerificationB1.mov"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -657,7 +657,7 @@ class TestVideoEnrollmentsByUrl extends AnyFunSuite with BeforeAndAfter {
 
     // Create Video Enrollment
     test("createVideoEnrollmentByUrl()") {
-      val ret = Json.parse(vi.createVideoEnrollmentByUrl(userId, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB1.mov"))
+      val ret = Json.parse(vi.createVideoEnrollmentByUrl(userId, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB1.mov"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 201, "message: " + message)
@@ -683,12 +683,12 @@ class TestVideoVerificationIdentificationByUrl extends AnyFunSuite with BeforeAn
       groupId = (ret \ "groupId").get.as[String]
       vi.addUserToGroup(groupId, userId1)
       vi.addUserToGroup(groupId, userId2)
-      vi.createVideoEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB1.mov")
-      vi.createVideoEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB2.mov")
-      vi.createVideoEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB3.mov")
-      vi.createVideoEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC1.mov")
-      vi.createVideoEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC2.mov")
-      vi.createVideoEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC3.mov")
+      vi.createVideoEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB1.mov")
+      vi.createVideoEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB2.mov")
+      vi.createVideoEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentB3.mov")
+      vi.createVideoEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC1.mov")
+      vi.createVideoEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC2.mov")
+      vi.createVideoEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoEnrollmentC3.mov")
     }
 
 
@@ -702,7 +702,7 @@ class TestVideoVerificationIdentificationByUrl extends AnyFunSuite with BeforeAn
 
     // Video Verification
     test("videoVerificationByUrl()") {
-      val ret = Json.parse(vi.videoVerificationByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoVerificationB1.mov"))
+      val ret = Json.parse(vi.videoVerificationByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoVerificationB1.mov"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -712,7 +712,7 @@ class TestVideoVerificationIdentificationByUrl extends AnyFunSuite with BeforeAn
 
     // Video Identification
     test("videoIdentificationByUrl()") {
-      val ret = Json.parse(vi.videoIdentificationByUrl(groupId, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoVerificationB1.mov"))
+      val ret = Json.parse(vi.videoIdentificationByUrl(groupId, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/videoVerificationB1.mov"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -749,7 +749,7 @@ class TestVoiceEnrollments extends AnyFunSuite with BeforeAndAfter {
 
     // Create Voice Enrollment
     test("createVoiceEnrollment()") {
-      val ret = Json.parse(vi.createVoiceEnrollment(userId, "en-US", "never forget tomorrow is a new day", "./testenrollmentenrollmentA1.wav"))
+      val ret = Json.parse(vi.createVoiceEnrollment(userId, "en-US", "Never forget tomorrow is a new day", "./testenrollmentenrollmentA1.wav"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 201, "message: " + message)
@@ -781,7 +781,7 @@ class TestVoiceEnrollmentsByUrl extends AnyFunSuite with BeforeAndAfter {
 
     // Create Voice Enrollment
     test("createVoiceEnrollmentByUrl()") {
-      val ret = Json.parse(vi.createVoiceEnrollmentByUrl(userId, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA1.wav"))
+      val ret = Json.parse(vi.createVoiceEnrollmentByUrl(userId, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA1.wav"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 201, "message: " + message)
@@ -812,12 +812,12 @@ class TestVoiceVerificationIdentification extends AnyFunSuite with BeforeAndAfte
       groupId = (ret \ "groupId").get.as[String]
       vi.addUserToGroup(groupId, userId1)
       vi.addUserToGroup(groupId, userId2)
-      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA1.wav")
-      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA2.wav")
-      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA3.wav")
-      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC1.wav")
-      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC2.wav")
-      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC3.wav")
+      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA1.wav")
+      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA2.wav")
+      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA3.wav")
+      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC1.wav")
+      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC2.wav")
+      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC3.wav")
     }
 
     after {
@@ -831,7 +831,7 @@ class TestVoiceVerificationIdentification extends AnyFunSuite with BeforeAndAfte
 
     // Voice Verification
     test("voiceVerification()") {
-      val ret = Json.parse(vi.voiceVerification(userId1, "en-US", "never forget tomorrow is a new day", "./verificationA1.wav"))
+      val ret = Json.parse(vi.voiceVerification(userId1, "en-US", "Never forget tomorrow is a new day", "./verificationA1.wav"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -841,7 +841,7 @@ class TestVoiceVerificationIdentification extends AnyFunSuite with BeforeAndAfte
 
     // Voice Identification
     test("voiceIdentification()") {
-      val ret = Json.parse(vi.voiceIdentification(groupId, "en-US", "never forget tomorrow is a new day", "./verificationA1.wav"))
+      val ret = Json.parse(vi.voiceIdentification(groupId, "en-US", "Never forget tomorrow is a new day", "./verificationA1.wav"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -873,12 +873,12 @@ class TestVoiceVerificationIdentificationByUrl extends AnyFunSuite with BeforeAn
       groupId = (ret \ "groupId").get.as[String]
       vi.addUserToGroup(groupId, userId1)
       vi.addUserToGroup(groupId, userId2)
-      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA1.wav")
-      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA2.wav")
-      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA3.wav")
-      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC1.wav")
-      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC2.wav")
-      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC3.wav")
+      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA1.wav")
+      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA2.wav")
+      vi.createVoiceEnrollmentByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentA3.wav")
+      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC1.wav")
+      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC2.wav")
+      vi.createVoiceEnrollmentByUrl(userId2, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/enrollmentC3.wav")
     }
 
     after {
@@ -892,7 +892,7 @@ class TestVoiceVerificationIdentificationByUrl extends AnyFunSuite with BeforeAn
 
     // Voice Verification By Url
     test("voiceVerificationByUrl()") {
-      val ret = Json.parse(vi.voiceVerificationByUrl(userId1, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/verificationA1.wav"))
+      val ret = Json.parse(vi.voiceVerificationByUrl(userId1, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/verificationA1.wav"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)
@@ -902,7 +902,7 @@ class TestVoiceVerificationIdentificationByUrl extends AnyFunSuite with BeforeAn
 
     // Voice Identification By Url
     test("voiceIdentificationByUrl()") {
-      val ret = Json.parse(vi.voiceIdentificationByUrl(groupId, "en-US", "never forget tomorrow is a new day", "https://drive.voiceit.io/files/verificationA1.wav"))
+      val ret = Json.parse(vi.voiceIdentificationByUrl(groupId, "en-US", "Never forget tomorrow is a new day", "https://drive.voiceit.io/files/verificationA1.wav"))
       val status = (ret \ "status").get.as[Int]
       val message = (ret \ "message").get.as[String]
       assert(status === 200, "message: " + message)

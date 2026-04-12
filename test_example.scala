@@ -4,7 +4,7 @@ object TestExample extends App {
   val ak = sys.env("VOICEIT_API_KEY")
   val at = sys.env("VOICEIT_API_TOKEN")
   val vi = new VoiceIt3(ak, at)
-  val phrase = "never forget tomorrow is a new day"
+  val phrase = "Never forget tomorrow is a new day"
   val td = "test-data"
 
   val createR = vi.createUser()
