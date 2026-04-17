@@ -12,3 +12,5 @@ project/plugins/project/
 .lib/
 .DS_Store
 src/main/scala/voiceit3/VoiceIt3Driver.scala
+.env
+.env.*
