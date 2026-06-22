@@ -2,7 +2,7 @@
 
 [![API Test](https://github.com/voiceittech/voiceit3-scala/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/voiceittech/voiceit3-scala/actions/workflows/test.yml)
 [![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/voiceit3-scala/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/voiceit3-scala/pulls?q=is%3Apr+label%3Adependencies)
-[![Version](https://img.shields.io/badge/version-3.0.3-blue)](https://github.com/voiceittech/voiceit3-scala)
+[![Version](https://img.shields.io/badge/version-3.0.8-blue)](https://github.com/voiceittech/voiceit3-scala)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/voiceittech/voiceit3-scala/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Scala-lightgrey)](https://github.com/voiceittech/voiceit3-scala)
 [![VoiceIt API](https://img.shields.io/badge/VoiceIt-API%203.0-blue)](https://voiceit.io)
@@ -14,7 +14,7 @@ A Scala wrapper for VoiceIt's API 3.0 featuring Voice + Face Verification and Id
 
 Add to your `build.sbt`:
 ```scala
-libraryDependencies += "com.github.voiceittech" % "voiceit3-scala" % "3.0.0"
+libraryDependencies += "com.github.voiceittech" % "voiceit3-scala" % "3.0.8"
 ```
 
 Or clone directly:
